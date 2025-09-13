@@ -1,0 +1,37 @@
+{
+  "name": "astro-az-docker-template",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Astro Docker Template - A production-ready template with Docker support for connecting to various backend containers",
+  "keywords": [
+    "astro",
+    "docker",
+    "template",
+    "multi-backend",
+    "containerized",
+    "production-ready"
+  ],
+  "scripts": {
+    "dev": "astro dev --host 0.0.0.0",
+    "start": "node ./dist/server/entry.mjs",
+    "build": "astro check && astro build",
+    "preview": "astro preview --host 0.0.0.0",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/node": "^8.3.4",
+    "@astrojs/react": "^4.3.1",
+    "@tailwindcss/vite": "^4.1.13",
+    "@types/react": "^19.1.12",
+    "@types/react-dom": "^19.1.9",
+    "astro": "^4.16.19",
+    "react": "^19.1.1",
+    "react-dom": "^19.1.1",
+    "tailwindcss": "^4.1.13",
+    "typescript": "^5.6.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.5"
+  }
+}

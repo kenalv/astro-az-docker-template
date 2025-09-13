@@ -1,0 +1,24 @@
+---
+import ButtonAction from "@/components/ButtonAction"
+import ButtonApi from "@/components/ButtonApi"
+import Layout from "@/layouts/Layout.astro"
+
+---
+<Layout title="Home">
+  <div class="flex flex-row justify-center mt-4">
+    <h1>Astro Azure Template</h1>
+    <p>Example: Call Internal API (via proxy):</p>
+  </div>
+  <div class="flex flex-row justify-around gap-4 mt-4">
+    <ButtonApi client:load
+      children="Call Rick and Morty API using Astro API"
+      variant="primary" />
+    <ButtonAction client:load
+      children="Call Rick and Morty API using Astro Actions" 
+      variant="secondary" />
+
+  </div>
+
+  <pre id="out"></pre>
+</Layout>
+
