@@ -30,10 +30,10 @@ import Layout from "@/layouts/Layout.astro"
       </aside>
     </div>
     <div class="flex flex-row justify-center gap-4 mt-4">
-      <ButtonApi client:load
+      <ButtonApi client:visible
         children="Call Rick and Morty API using Astro API"
         variant="primary" />
-      <ButtonAction client:load
+      <ButtonAction client:visible
         children="Call Rick and Morty API using Astro Actions" 
         variant="secondary" />
     </div>

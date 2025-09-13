@@ -15,6 +15,10 @@ export default defineConfig({
     host: '0.0.0.0',
     port: 4321
   },
+  // Optimización de assets estáticos
+  build: {
+    assets: '_astro'
+  },
   // Configure for different backend APIs
   vite: {
     plugins: [
@@ -26,6 +30,16 @@ export default defineConfig({
         usePolling: true,
         interval: 1000
       }
+    },
+    build: {
+      rollupOptions: {
+        output: {
+          manualChunks: {
+            'react-vendor': ['react', 'react-dom']
+          }
+        }
+      },
+      assetsInlineLimit: 0 // Evita inline de assets pequeños
     }
   },
   image: {
