@@ -4,11 +4,13 @@ Plantilla mínima para desplegar una app de `Astro` en **Azure App Service** com
 
 Quickstart
 
-1. Rellenar variables de entorno en Azure App Service:
-   - `BASE_API_URL` -> URL interna de las APIs (p. ej. `https://my-backend.internal:443`)
-   - `NODE_ENV=production`
-2. Construir imagen Docker y push a un registry.
-3. Crear App Service con imagen del registry y asignarle las variables de entorno.
+1. Crear App Service con los datos Linux/Container y datos de donde estara la imagen del registry *algunos datos son parte de los secrets y variables de entorno del Azure App Service.
+2. Rellenar variables de entorno en Azure App Service:
+   - Ver `gihub.secrets.example` para GitHub Actions.
+   - Ver `env.azure copy.example` para Azure App Service -> Environment variables
+3. Si todo esta bien configurado haz un push de algun cambio minimo para que el `.githun\workflow\deploy.yml` workflow cree la imagen y hace push al ghcr.io.
+4. Si el workflow se ejecuta exitosamente. El app Services va a descargar la imagen del ghcr.io y ejecutaria el contenedor.
+5. Ya se podria acceder al app Service.
 
 Recomendaciones de red
 
