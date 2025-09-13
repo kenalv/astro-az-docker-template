@@ -21,4 +21,4 @@ RUN chown -R astro:nodejs /app
 USER astro 
 
 EXPOSE 4321
-CMD ["node", "./dist/server/index.mjs"]
+CMD ["node", "./dist/server/entry.mjs"]
