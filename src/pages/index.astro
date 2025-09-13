@@ -5,20 +5,38 @@ import Layout from "@/layouts/Layout.astro"
 
 ---
 <Layout title="Home">
-  <div class="flex flex-row justify-center mt-4">
-    <h1>Astro Azure Template</h1>
-    <p>Example: Call Internal API (via proxy):</p>
+  <div class="flex flex-col mt-4">
+    <div class="flex flex-row justify-center mt-4">
+      <div>
+        <h1>Astro Azure Template</h1>
+        <p>Example: Call Internal API (via proxy):</p>
+      </div>  
+    </div>
+    <div  class="flex flex-row justify-center mt-4">
+      <aside class="bg-black text-white p-6 rounded-lg w-full max-w-lg font-mono h-auto">
+        <div class="flex justify-between items-center">
+          <div class="flex space-x-2 text-red-500">
+            <div class="w-3 h-3 rounded-full bg-red-500"></div>
+            <div class="w-3 h-3 rounded-full bg-yellow-500"></div>
+            <div class="w-3 h-3 rounded-full bg-green-500"></div>
+          </div>
+          <p class="text-sm">bash</p>
+        </div>
+        <div class="mt-4 max-h-64 overflow-y-auto">
+          <p class="text-green-400">$ ¬ </p>
+          <p id="out" class="text-white max-w-full break-words"></p>
+          <p class="text-green-400">$</p>
+        </div>
+      </aside>
+    </div>
+    <div class="flex flex-row justify-center gap-4 mt-4">
+      <ButtonApi client:load
+        children="Call Rick and Morty API using Astro API"
+        variant="primary" />
+      <ButtonAction client:load
+        children="Call Rick and Morty API using Astro Actions" 
+        variant="secondary" />
+    </div>
   </div>
-  <div class="flex flex-row justify-around gap-4 mt-4">
-    <ButtonApi client:load
-      children="Call Rick and Morty API using Astro API"
-      variant="primary" />
-    <ButtonAction client:load
-      children="Call Rick and Morty API using Astro Actions" 
-      variant="secondary" />
-
-  </div>
-
-  <pre id="out"></pre>
 </Layout>
 
